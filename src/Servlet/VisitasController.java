@@ -17,7 +17,7 @@ import Model.Visita;
 /**
  * Servlet implementation class TesteEntidade
  */
-@WebServlet("/")
+@WebServlet(urlPatterns = {"/visitas", "/visitas-new"})
 public class VisitasController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private VisitaDAO visitaDAO;
@@ -36,8 +36,10 @@ public class VisitasController extends HttpServlet {
 		String action = request.getServletPath();
 
 		try {
-			switch (action) {
-			case "/new":
+			System.out.println("sdsdsd"+action);
+			switch (action) {			
+			
+			case "/visitas-new":
 				showNewForm(request, response);
 				break;
 			case "/insert":
@@ -52,9 +54,11 @@ public class VisitasController extends HttpServlet {
 			case "/update":
 				updateVisita(request, response);
 				break;
-			default:
+			case "/visitas":
 				listVisita(request, response);
 				break;
+			
+
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);

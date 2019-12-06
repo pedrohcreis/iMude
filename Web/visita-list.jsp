@@ -7,9 +7,9 @@
 </head>
 <body>
 	<center>
-		<h1>User Management</h1>
+		<h1>User Management*</h1>
         <h2>
-        	<a href="new">Add New Visita</a>
+        	<a href="visitas-new">Add New Visita</a>
         	&nbsp;&nbsp;&nbsp;
         	<a href="list">List All Visitas</a>
         	
@@ -30,9 +30,9 @@
                     <td><c:out value="${visita.data}" /></td>
                     <td><c:out value="${visita.horario}" /></td>
                     <td>
-                    	<a href="edit?id=<c:out value='${visita.id}' />">Edit</a>
+                    	<a href="/edit?id=<c:out value='${visita.id}' />">Edit</a>
                     	&nbsp;&nbsp;&nbsp;&nbsp;
-                    	<a href="delete?id=<c:out value='${visita.id}' />">Delete</a>                    	
+                    	<a href="/delete?id=<c:out value='${visita.id}' />">Delete</a>                    	
                     </td>
                 </tr>
             </c:forEach>

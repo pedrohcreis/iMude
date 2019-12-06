@@ -1,19 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>User Management Application</title>
+    <meta charset="utf-8" />
+    <!-- link rel="stylesheet" href="/formatos.css"-->
+    <style type="text/css"> @import url("./formatos.css"); </style>
+    <title>Tela inicial</title>
 </head>
-<body>
-	<center>
-		<h1>Bem Vindo</h1>
-        <h2>
-        	<a href="new">Add New Visita</a>
-        	&nbsp;&nbsp;&nbsp;
-        	<a href="list">List All Visitas</a>
-        	
-        </h2>
-	</center>
+<body class="tela">
+    <h1 class="title">Bem-vindo ao Sistema iMude</h1>
+    <p>Veja nossos serviços</p>
+    <ul>
+        <li>
+            <a href="aluguel.html"
+               title=" Veja os imóveis que estão disponíveis para Aluguel">Imóveis para Aluguel</a>
+        </li>
+        <li>
+            <a href="compra.html"
+               title=" Veja os imóveis que estão disponíveis para a Compra">Imóveis para Compra</a>
+        </li>
+    </ul>
+    <p class="especializado">Usuários especializados</p>
+    <p class="especializado"><a href="gerente.html">Área do Gerente</a></p>
+    <p class="especializado"><a href="corretor.html">Área do Corretor</a></p>
+
+
+
 
 </body>
+</html>

@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.ImovelDAO;
 import Model.Imovel;
 
-public class ImovelController {
+@WebServlet(urlPatterns = {"/imoveis", "/imoveis-new"})
+public class ImovelController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ImovelDAO imovelDAO;
 	
