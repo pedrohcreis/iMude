@@ -30,9 +30,9 @@
                     <td><c:out value="${visita.data}" /></td>
                     <td><c:out value="${visita.horario}" /></td>
                     <td>
-                    	<a href="/edit?id=<c:out value='${visita.id}' />">Edit</a>
+                    	<a href="visitas-edit?id=<c:out value='${visita.id}' />">Edit</a>
                     	&nbsp;&nbsp;&nbsp;&nbsp;
-                    	<a href="/delete?id=<c:out value='${visita.id}' />">Delete</a>                    	
+                    	<a href="visitas-delete?id=<c:out value='${visita.id}' />">Delete</a>                    	
                     </td>
                 </tr>
             </c:forEach>

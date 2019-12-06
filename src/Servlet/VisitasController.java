@@ -17,7 +17,7 @@ import Model.Visita;
 /**
  * Servlet implementation class TesteEntidade
  */
-@WebServlet(urlPatterns = {"/visitas", "/visitas-new"})
+@WebServlet(urlPatterns = {"/visitas", "/visitas-new", "/visitas-delete", "/visitas-edit", "/visitas-update"})
 public class VisitasController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private VisitaDAO visitaDAO;
@@ -42,19 +42,19 @@ public class VisitasController extends HttpServlet {
 			case "/visitas-new":
 				showNewForm(request, response);
 				break;
-			case "/insert":
+			case "/visitas-insert":
 				insertVisita(request, response);
 				break;
-			case "/delete":
+			case "/visitas-delete":
 				deleteVisita(request, response);
 				break;
-			case "/edit":
+			case "/visitas-edit":
 				showEditForm(request, response);
 				break;
-			case "/update":
+			case "/visitas-update":
 				updateVisita(request, response);
 				break;
-			case "/visitas":
+			default:
 				listVisita(request, response);
 				break;
 			
@@ -122,8 +122,5 @@ public class VisitasController extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		visitaDAO.deleteVisita(id);
 		response.sendRedirect("list");
-
 	}
-
-
 }

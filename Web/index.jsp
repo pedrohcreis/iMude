@@ -24,9 +24,5 @@
     <p class="especializado">Usuários especializados</p>
     <p class="especializado"><a href="gerente.html">Área do Gerente</a></p>
     <p class="especializado"><a href="corretor.html">Área do Corretor</a></p>
-
-
-
-
 </body>
 </html>
