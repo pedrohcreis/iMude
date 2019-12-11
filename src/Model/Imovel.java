@@ -113,7 +113,7 @@ public class Imovel
 		this.data = data;
 	}
 	
-	public void setData(int tipo)
+	public void setTipo(int tipo)
 	{
 		this.tipo = tipo;
 	}
