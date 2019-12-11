@@ -10,9 +10,10 @@ public class Imovel
 	String descricao;
 	String foto;
 	int data;
+	int tipo;
 	
 	// Construtor
-	public Imovel(int id, float preco, String endereco, String status, String descricao, String foto, int data)
+	public Imovel(int id, float preco, String endereco, String status, String descricao, String foto, int data, int tipo)
 	{
 		this.id = id;
 		this.preco = preco;
@@ -21,9 +22,10 @@ public class Imovel
 		this.descricao = descricao;
 		this.foto = foto;
 		this.data = data;
+		this.tipo = tipo;
 	}
 	
-	public Imovel(float preco, String endereco, String status, String descricao, String foto, int data)
+	public Imovel(float preco, String endereco, String status, String descricao, String foto, int data, int tipo)
 	{
 		this.preco = preco;
 		this.endereco = endereco;
@@ -31,6 +33,7 @@ public class Imovel
 		this.descricao = descricao;
 		this.foto = foto;
 		this.data = data;
+		this.tipo = tipo;
 	}
 
 	// Getters
@@ -68,6 +71,11 @@ public class Imovel
 	{
 		return data;
 	}
+	
+	public int getTipo()
+	{
+		return tipo;
+	}
 
 	// Setters
 	public void setId(int id)
@@ -103,5 +111,10 @@ public class Imovel
 	public void setData(int data)
 	{
 		this.data = data;
+	}
+	
+	public void setData(int tipo)
+	{
+		this.tipo = tipo;
 	}
 }

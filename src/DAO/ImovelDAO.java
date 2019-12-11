@@ -23,6 +23,8 @@ public class ImovelDAO {
 	private static final String SELECT_ALL_IMOVEIS = "select * from Imoveis";
 	private static final String DELETE_IMOVEL_SQL = "delete from Imoveis where id = ?;";
 	private static final String UPDATE_IMOVEL_SQL = "update Imoveis set preco = ?, endereco = ?, status = ?, descricao = ?, foto = ?, data = ? where id = ?;";
+	private static final String SELECT_COMPRA_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = 1 and tipo = 3;";
+	private static final String SELECT_ALUGUEL_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = 2 and tipo = 3;";
 	
 	public ImovelDAO() {
 		
