@@ -4,70 +4,63 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-	<title>User Management Application</title>
+	<title>Aplicação de Gerenciamento de Imóveis</title>
 </head>
 <body>
 	<center>
-		<h1>User Management</h1>
+		<h1>Gerenciamento de Imoveis</h1>
         <h2>
-        	<a href="new">Add New Imovel</a>
+        	<a href="new">Adicionar Novo Imovel</a>
         	&nbsp;&nbsp;&nbsp;
-        	<a href="list">List All Imovel</a>
+        	<a href="list">List All Users</a>
+        	
         </h2>
 	</center>
     <div align="center">
     
-		<c:if test="${imovel != null}">
+		<c:if test="${user != null}">
 			<form action="update" method="post">
         </c:if>
         
-        <c:if test="${imovel == null}">
+        <c:if test="${user == null}">
 			<form action="insert" method="post">
         </c:if>
         
         <table border="1" cellpadding="5">
             <caption>
             	<h2>
-            		<c:if test="${imovel != null}">
-            			Edit Imovel
+            		<c:if test="${user != null}">
+            			Edit User
             		</c:if>
-            		<c:if test="${imovel == null}">
-            			Add New Imovel
+            		<c:if test="${user == null}">
+            			Add New User
             		</c:if>
             	</h2>
             </caption>
-        		<c:if test="${imovel != null}">
-        			<input type="hidden" name="id" value="<c:out value='${imovel.id}' />" />
-        		</c:if>
-        	<tr>
-                <th>Imovel Id: </th>
-                <td>
-                	<input type="int" name="id" size="45"
-                			value="<c:out value='${imovel.id}' />"
-                		/>
-                </td>
-            </tr>            
+        		<c:if test="${user != null}">
+        			<input type="hidden" name="id" value="<c:out value='${user.id}' />" />
+        		</c:if>            
             <tr>
-                <th>Imovel Preço: </th>
+                <th>User Name: </th>
                 <td>
-                	<input type="float" name="preco" size="45"
-                			value="<c:out value='${imovel.preco}' />"
+                	<input type="text" name="name" size="45"
+                			value="<c:out value='${user.name}' />"
                 		/>
                 </td>
             </tr>
             <tr>
-                <th>Imovel Endereco: </th>
+                <th>User Email: </th>
                 <td>
-                	<input type="text" name="endereco" size="45"
-                			value="<c:out value='${imovel.endereco}' />"
+                	<input type="text" name="email" size="45"
+                			value="<c:out value='${user.email}' />"
                 	/>
                 </td>
             </tr>
             <tr>
-                <th>Imovel Status : </th>
+                <th>Country: </th>
                 <td>
-                	<input type="text" name="endereco" size="45"
-                			value="<c:out value='${imovel.status}' />"
+                	<input type="text" name="country" size="15"
+                			value="<c:out value='${user.country}' />"
                 	/>
                 </td>
             </tr>
