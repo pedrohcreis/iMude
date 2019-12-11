@@ -13,7 +13,7 @@
     <p>Veja nossos serviços</p>
     <ul>
         <li>
-            <a href="aluguel.html"
+            <a href="aluguel.jsp"
                title=" Veja os imóveis que estão disponíveis para Aluguel">Imóveis para Aluguel</a>
         </li>
         <li>

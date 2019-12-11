@@ -13,7 +13,6 @@
         	<a href="new">Add New Imovel</a>
         	&nbsp;&nbsp;&nbsp;
         	<a href="list">List All Imovel</a>
-        	
         </h2>
 	</center>
     <div align="center">

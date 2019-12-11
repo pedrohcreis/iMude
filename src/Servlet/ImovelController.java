@@ -67,7 +67,7 @@ public class ImovelController extends HttpServlet {
 // Mostrar imovel
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("imovel-form.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("imovel.jsp");
 		dispatcher.forward(request, response);
 	}
 // Mostrar imovel para edição
@@ -88,8 +88,8 @@ public class ImovelController extends HttpServlet {
 		String status = request.getParameter("status");
 		String descricao = request.getParameter("descricao");
 		String foto = request.getParameter("foto");
-		int data = Integer.parseInt(request.getParameter("data"));
-		Imovel newImovel = new Imovel(preco, endereco, status, descricao, foto, data);
+		int tipo = Integer.parseInt(request.getParameter("tipo"));
+		Imovel newImovel = new Imovel(preco, endereco, status, descricao, foto, tipo);
 		imovelDAO.insertImovel(newImovel);
 		response.sendRedirect("list");
 	}
@@ -102,9 +102,9 @@ public class ImovelController extends HttpServlet {
 		String status = request.getParameter("status");
 		String descricao = request.getParameter("descricao");
 		String foto = request.getParameter("foto");
-		int data = Integer.parseInt(request.getParameter("data"));
+		int tipo = Integer.parseInt(request.getParameter("tipo"));
 
-		Imovel imovel = new Imovel(id, preco, endereco, status, descricao, foto, data);
+		Imovel imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo);
 		imovelDAO.updateImovel(imovel);
 		response.sendRedirect("list");
 	}
