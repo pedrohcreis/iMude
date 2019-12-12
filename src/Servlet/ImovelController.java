@@ -33,7 +33,7 @@ public class ImovelController extends HttpServlet {
 
 		try {
 			switch (action) {
-			case "/new":
+			case "/imoveis-new":
 				showNewForm(request, response);
 				break;
 			case "/insert":

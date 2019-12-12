@@ -8,22 +8,63 @@
     <style type="text/css"> @import url("./formatos.css"); </style>
     <title>Tela inicial</title>
 </head>
-<body class="tela">
-    <h1 class="title">Bem-vindo ao Sistema iMude</h1>
-    <p>Veja nossos serviços</p>
-    <ul>
-        <li>
-            <a href="aluguel.jsp"
-               title=" Veja os imóveis que estão disponíveis para Aluguel">Imóveis para Aluguel</a>
-        </li>
-        <li>
-            <a href="compra.jsp"
-               title=" Veja os imóveis que estão disponíveis para a Compra">Imóveis para Compra</a>
-        </li>
-    </ul>
-    <p class="especializado">Área dos Usuários</p>
-    <p class="especializado"><a href="area_do_gerente.jsp">Área do Gerente</a></p>
-    <p class="especializado"><a href="corretor.html">Área do Corretor</a></p>
-    <p class="especializado"><a href="comprador.jsp">Área do Cliente</a></p>
+<style>
+	body {
+    	background-image: url("Files/home.jpg");
+    	opacity: 0.7;
+    	background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-position: cover;
+  		background-size: cover;
+	}
+</style>
+<body>
+	<style>
+	.outer {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+    }
+	</style>
+	<div align="center" class="outer">
+		<h1 class="title">Bem-vindo ao Sistema iMude</h1>
+	</div>
+	<style>
+	.outer2 {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+       margin-right: 350px;
+       margin-left: 350px;
+       margin-top: 20px;
+       width: 400px;
+    }
+    </style>
+	<div align="center" class="outer2">
+		<h2>Veja nossos serviços</h2>
+		</br>
+  		<a href="aluguel.jsp"><button type="button" style="background-color: #4CAF50; font-size: 24px;">Imóveis para Aluguel</button></a>
+        </br>
+        </br>
+        <a href="compra.jsp"><button type="button" style="background-color: #4CAF50; font-size: 24px;">Imóveis para Compra</button></a>
+        </br>
+        </br>
+        </br>
+	</div>
+	<style>
+	.outer3 {
+       border: 1px solid gray;
+       background-color: #C0C0DA;
+       margin-right: 350px;
+       margin-left: 350px;
+       margin-top: 20px;
+       margin-bottom: 20px;
+       width: 400px;
+    }
+    </style>
+    <div align="center" class="outer3">
+	    <h2>Área dos Usuários</h2>
+	    <p style="font-size: 20px;"><a href="comprador.jsp">Área do Cliente</a></p>
+	    <p style="font-size: 20px;"><a href="corretor.html">Área do Corretor</a></p>
+	    <p style="font-size: 20px;"><a href="area_do_gerente.jsp">Área do Gerente</a></p>
+    </div>
 </body>
 </html>

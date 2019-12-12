@@ -53,7 +53,7 @@
 	    		<td><c:out value="${imovel.descricao}" /></td>
 	    		</br>	
 	    		</br>
-	    		<a href="imovel.jsp"><button type="button" style="background-color: #008CBA;">Mais Detalhes</button></a>
+    			<a href="imovel.jsp"><button type="button" style="background-color: #008CBA;">Mais Detalhes</button></a>
 	    		</br>	
 	    		</br>
     		</tr>

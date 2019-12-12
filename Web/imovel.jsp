@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="formatos.css">
 	<title>Insert title here</title>
 </head>
-<body>
+<body class="tela">
 	<div class="imovel-cont" align="center">
 		<form action="new" method="post">
 			<tr>
