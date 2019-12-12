@@ -16,15 +16,15 @@ public class ImovelDAO {
 	private String jdbcUsername = "t1g5";
 	private String jdbcPassword = "VnzHBEh";
 	
-	private static final String INSERT_IMOVEL_SQL = "INSERT INTO Imoveis" + "  (preco, endereco, status, descricao, foto, data) VALUES "
-			+ " (?, ?, ?, ?, ?, ?);";
+	private static final String INSERT_IMOVEL_SQL = "INSERT INTO Imoveis" + "  (preco, endereco, status, descricao, foto, dataInicial, dataFinal) VALUES "
+			+ " (?, ?, ?, ?, ?, ?, ?);";
 
-	private static final String SELECT_IMOVEL_BY_ID = "select id, preco, endereco, status, descricao, foto, data from Imoveis where id =?";
+	private static final String SELECT_IMOVEL_BY_ID = "select id, preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal from Imoveis where id =?";
 	private static final String SELECT_ALL_IMOVEIS = "select * from Imoveis";
 	private static final String DELETE_IMOVEL_SQL = "delete from Imoveis where id = ?;";
-	private static final String UPDATE_IMOVEL_SQL = "update Imoveis set preco = ?, endereco = ?, status = ?, descricao = ?, foto = ?, data = ? where id = ?;";
-	private static final String SELECT_COMPRA_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = 1 and tipo = 3;";
-	private static final String SELECT_ALUGUEL_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = 2 and tipo = 3;";
+	private static final String UPDATE_IMOVEL_SQL = "update Imoveis set preco = ?, endereco = ?, status = ?, descricao = ?, foto = ?, dataInicial = ?, dataFinal = ? where id = ?;";
+	private static final String SELECT_COMPRA_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = \"compra\" ;";
+	private static final String SELECT_ALUGUEL_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = \"aluguel\" ;";
 	
 	public ImovelDAO() {
 		
@@ -57,8 +57,8 @@ public class ImovelDAO {
 			preparedStatement.setString(4, imovel.getDescricao());
 			preparedStatement.setString(5, imovel.getFoto());
 			preparedStatement.setString(6, imovel.getTipo());
-			preparedStatement.setInt(7,  imovel.getData_Inicial());
-			preparedStatement.setInt(8,  imovel.getData_Final());
+			preparedStatement.setInt(7,  imovel.getDataInicial());
+			preparedStatement.setInt(8,  imovel.getDataFinal());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -85,9 +85,9 @@ public class ImovelDAO {
 				String descricao = rs.getString("descricao");
 				String foto = rs.getString("foto");
 				String tipo = rs.getString("tipo");
-				int data_inicial = rs.getInt("data_inicial");
-				int data_final = rs.getInt("data_final");
-				imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo, data_inicial, data_final);
+				int dataInicial = rs.getInt("dataInicial");
+				int dataFinal = rs.getInt("dataFinal");
+				imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -117,9 +117,9 @@ public class ImovelDAO {
 				String descricao = rs.getString("descricao");
 				String foto = rs.getString("foto");
 				String tipo = rs.getString("tipo");
-				int data_inicial = rs.getInt("data_inicial");
-				int data_final = rs.getInt("data_final");
-				imoveis.add(new Imovel(id, preco, endereco, status, descricao, foto, tipo, data_inicial, data_final));
+				int dataInicial = rs.getInt("dataInicial");
+				int dataFinal = rs.getInt("dataFinal");
+				imoveis.add(new Imovel(id, preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -146,7 +146,9 @@ public class ImovelDAO {
 			statement.setString(3,  imovel.getStatus());
 			statement.setString(4, imovel.getDescricao());
 			statement.setString(5,  imovel.getFoto());
-			statement.setInt(6, imovel.getId());
+			statement.setInt(6,  imovel.getDataInicial());
+			statement.setInt(7,  imovel.getDataFinal());
+			statement.setInt(8, imovel.getId());
 
 			rowUpdated = statement.executeUpdate() > 0;
 		}

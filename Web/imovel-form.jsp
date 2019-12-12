@@ -8,59 +8,99 @@
 </head>
 <body>
 	<center>
-		<h1>Gerenciamento de Imoveis</h1>
+		<h1>Gerenciamento de Imóveis</h1>
         <h2>
-        	<a href="new">Adicionar Novo Imovel</a>
+        	<a href="/iMude/imoveis-new-gerente">Adicionar Novo Imóvel</a>
         	&nbsp;&nbsp;&nbsp;
-        	<a href="list">List All Users</a>
+        	<a href="/iMude/imoveis-list-gerente">Listar Todos Imóveis</a>
         	
         </h2>
 	</center>
     <div align="center">
     
-		<c:if test="${user != null}">
-			<form action="update" method="post">
+		<c:if test="${imovel != null}">
+			<form action="/iMude/imoveis-update" method="post">
         </c:if>
         
-        <c:if test="${user == null}">
-			<form action="insert" method="post">
+        <c:if test="${imovel == null}">
+			<form action="/iMude/imoveis-insert" method="post">
         </c:if>
         
         <table border="1" cellpadding="5">
             <caption>
             	<h2>
-            		<c:if test="${user != null}">
-            			Edit User
+            		<c:if test="${imovel != null}">
+            			Editar Imóvel
             		</c:if>
-            		<c:if test="${user == null}">
-            			Add New User
+            		<c:if test="${imovel == null}">
+            			Adicionar Novo Imóvel
             		</c:if>
             	</h2>
             </caption>
-        		<c:if test="${user != null}">
-        			<input type="hidden" name="id" value="<c:out value='${user.id}' />" />
+        		<c:if test="${imovel != null}">
+        			<input type="hidden" name="id" value="<c:out value='${imovel.id}' />" />
         		</c:if>            
             <tr>
-                <th>User Name: </th>
+                <th>Preço: </th>
                 <td>
-                	<input type="text" name="name" size="45"
-                			value="<c:out value='${user.name}' />"
+                	<input type="text" name="preco" size="45"
+                			value="<c:out value='${imovel.preco}' />"
                 		/>
                 </td>
             </tr>
             <tr>
-                <th>User Email: </th>
+                <th>Endereco: </th>
                 <td>
-                	<input type="text" name="email" size="45"
-                			value="<c:out value='${user.email}' />"
+                	<input type="text" name="endereco" size="45"
+                			value="<c:out value='${imovel.endereco}' />"
                 	/>
                 </td>
             </tr>
             <tr>
-                <th>Country: </th>
+                <th>Status: </th>
                 <td>
-                	<input type="text" name="country" size="15"
-                			value="<c:out value='${user.country}' />"
+                	<input type="text" name="status" size="15"
+                			value="<c:out value='${imovel.status}' />"
+                	/>
+                </td>
+            </tr>
+            <tr>
+                <th>Descrição: </th>
+                <td>
+                	<input type="text" name="descricao" size="15"
+                			value="<c:out value='${imovel.descricao}' />"
+                	/>
+                </td>
+            </tr>
+            <tr>
+                <th>Foto: </th>
+                <td>
+                	<input type="text" name="foto" size="15"
+                			value="<c:out value='${imovel.foto}' />"
+                	/>
+                </td>
+            </tr>
+            <tr>
+                <th>Tipo: </th>
+                <td>
+                	<input type="text" name="tipo" size="15"
+                			value="<c:out value='${imovel.tipo}' />"
+                	/>
+                </td>
+            </tr>
+            <tr>
+                <th>Data Inicial: </th>
+                <td>
+                	<input type="text" name="data_inicial" size="15"
+                			value="<c:out value='${imovel.dataInicial}' />"
+                	/>
+                </td>
+            </tr>
+            <tr>
+                <th>Data Final: </th>
+                <td>
+                	<input type="text" name="data_final" size="15"
+                			value="<c:out value='${imovel.dataFinal}' />"
                 	/>
                 </td>
             </tr>

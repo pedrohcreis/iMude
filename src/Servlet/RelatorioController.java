@@ -56,13 +56,13 @@ public class RelatorioController extends HttpServlet {
 // Mostrar Relatorio
 	private void mostrarRelatorio(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		int data_inicial = Integer.parseInt(request.getParameter("data_inicial"));
-		int data_final = Integer.parseInt(request.getParameter("data_final"));
+		int dataInicial = Integer.parseInt(request.getParameter("dataInicial"));
+		int dataFinal = Integer.parseInt(request.getParameter("dataFinal"));
 		String tipo = request.getParameter("tipo");
 		String status = request.getParameter("status");
 		
 		
-		List<Imovel> listRelatorio = RelatorioDAO.selecionarImoveis(tipo, status, data_inicial, data_final);
+		List<Imovel> listRelatorio = RelatorioDAO.selecionarImoveis(tipo, status, dataInicial, dataFinal);
 		request.setAttribute("listRelatorio", listRelatorio);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("relatorio-list.jsp");
 		dispatcher.forward(request, response);

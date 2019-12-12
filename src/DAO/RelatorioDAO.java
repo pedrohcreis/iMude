@@ -20,7 +20,7 @@ public class RelatorioDAO {
 	private String jdbcUsername = "t1g5";
 	private String jdbcPassword = "VnzHBEh";
 
-	private static final String SELECT_RELATORIO = "SELECT id, preco, endereco, status, tipo, data_inicial, data_final FROM Imoveis WHERE tipo = ? AND status = ? AND data_inicial <= ? AND data_final >= ?;";
+	private static final String SELECT_RELATORIO = "SELECT id, preco, endereco, status, tipo, dataInicial, dataFinal FROM Imoveis WHERE tipo = ? AND status = ? AND dataInicial <= ? AND dataFinal >= ?;";
 
 	public RelatorioDAO() {
 	}
@@ -41,7 +41,7 @@ public class RelatorioDAO {
 		return connection;
 	}
 
-	public List<Imovel> selecionarImoveis(String tipo, String status, int data_inicial, int data_final) {
+	public List<Imovel> selecionarImoveis(String tipo, String status, int dataInicial, int dataFinal) {
 		System.out.println(SELECT_RELATORIO);
 		// Criando array de imoveis
 		List<Imovel> imoveis = new ArrayList<>();
@@ -52,8 +52,8 @@ public class RelatorioDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_RELATORIO);) {
 			preparedStatement.setString(1, tipo);
 			preparedStatement.setString(2, status);
-			preparedStatement.setInt(3, data_inicial);
-			preparedStatement.setInt(4, data_final);
+			preparedStatement.setInt(3, dataInicial);
+			preparedStatement.setInt(4, dataFinal);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -64,10 +64,10 @@ public class RelatorioDAO {
 				String endereco = rs.getString("endereco");
 				status = rs.getString("status");
 				tipo = rs.getString("tipo");
-				data_inicial = rs.getInt("data_inicial");
-				data_final = rs.getInt("data_final");
+				dataInicial = rs.getInt("dataInicial");
+				dataFinal = rs.getInt("dataFinal");
 				
-				imoveis.add(new Imovel(id, preco, endereco, status, tipo, data_inicial, data_final));
+				imoveis.add(new Imovel(id, preco, endereco, status, tipo, dataInicial, dataFinal));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);

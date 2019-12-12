@@ -10,11 +10,11 @@ public class Imovel
 	String descricao;
 	String foto;
 	String tipo;
-	int data_inicial;
-	int data_final;
+	int dataInicial;
+	int dataFinal;
 	
 	// Construtor
-	public Imovel(int id, float preco, String endereco, String status, String descricao, String foto, String tipo, int data_inicial, int data_final)
+	public Imovel(int id, float preco, String endereco, String status, String descricao, String foto, String tipo, int dataInicial, int dataFinal)
 	{
 		this.id = id;
 		this.preco = preco;
@@ -23,11 +23,11 @@ public class Imovel
 		this.descricao = descricao;
 		this.foto = foto;
 		this.tipo = tipo;
-		this.data_inicial = data_inicial;
-		this.data_final = data_final;
+		this.dataInicial = dataInicial;
+		this.dataFinal = dataFinal;
 	}
 	
-	public Imovel(float preco, String endereco, String status, String descricao, String foto, String tipo, int data_inicial, int data_final)
+	public Imovel(float preco, String endereco, String status, String descricao, String foto, String tipo, int dataInicial, int dataFinal)
 	{
 		this.preco = preco;
 		this.endereco = endereco;
@@ -35,19 +35,19 @@ public class Imovel
 		this.descricao = descricao;
 		this.foto = foto;
 		this.tipo = tipo;
-		this.data_inicial = data_inicial;
-		this.data_final = data_final;
+		this.dataInicial = dataInicial;
+		this.dataFinal = dataFinal;
 	}
 	
-	public Imovel(int id, float preco, String endereco, String status, String tipo, int data_inicial, int data_final)
+	public Imovel(int id, float preco, String endereco, String status, String tipo, int dataInicial, int dataFinal)
 	{
 		this.id = id;
 		this.preco = preco;
 		this.endereco = endereco;
 		this.status = status;
 		this.tipo = tipo;
-		this.data_inicial = data_inicial;
-		this.data_final = data_final;
+		this.dataInicial = dataInicial;
+		this.dataFinal = dataFinal;
 	}
 
 	// Getters
@@ -86,14 +86,14 @@ public class Imovel
 		return tipo;
 	}
 	
-	public int getData_Inicial()
+	public int getDataInicial()
 	{
-		return data_inicial;
+		return dataInicial;
 	}
 	
-	public int getData_Final()
+	public int getDataFinal()
 	{
-		return data_final;
+		return dataFinal;
 	}
 
 	// Setters
@@ -132,13 +132,13 @@ public class Imovel
 		this.tipo = tipo;
 	}
 	
-	public void setData_Inicial(int data_inicial)
+	public void setDataInicial(int dataInicial)
 	{
-		this.data_inicial = data_inicial;
+		this.dataInicial = dataInicial;
 	}
 	
-	public void setData_Final(int data_final)
+	public void setDataFinal(int dataFinal)
 	{
-		this.data_final = data_final;
+		this.dataFinal = dataFinal;
 	}
 }
