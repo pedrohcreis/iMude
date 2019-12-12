@@ -56,7 +56,9 @@ public class ImovelDAO {
 			preparedStatement.setString(3, imovel.getStatus());
 			preparedStatement.setString(4, imovel.getDescricao());
 			preparedStatement.setString(5, imovel.getFoto());
-			preparedStatement.setInt(6, imovel.getTipo());
+			preparedStatement.setString(6, imovel.getTipo());
+			preparedStatement.setInt(7,  imovel.getData_Inicial());
+			preparedStatement.setInt(8,  imovel.getData_Final());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -82,8 +84,10 @@ public class ImovelDAO {
 				String status = rs.getString("status");
 				String descricao = rs.getString("descricao");
 				String foto = rs.getString("foto");
-				int tipo = rs.getInt("tipo");
-				imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo);
+				String tipo = rs.getString("tipo");
+				int data_inicial = rs.getInt("data_inicial");
+				int data_final = rs.getInt("data_final");
+				imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo, data_inicial, data_final);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -112,8 +116,10 @@ public class ImovelDAO {
 				String status = rs.getString("status");
 				String descricao = rs.getString("descricao");
 				String foto = rs.getString("foto");
-				int tipo = rs.getInt("tipo");
-				imoveis.add(new Imovel(id, preco, endereco, status, descricao, foto, tipo));
+				String tipo = rs.getString("tipo");
+				int data_inicial = rs.getInt("data_inicial");
+				int data_final = rs.getInt("data_final");
+				imoveis.add(new Imovel(id, preco, endereco, status, descricao, foto, tipo, data_inicial, data_final));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);

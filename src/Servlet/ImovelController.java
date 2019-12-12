@@ -88,8 +88,10 @@ public class ImovelController extends HttpServlet {
 		String status = request.getParameter("status");
 		String descricao = request.getParameter("descricao");
 		String foto = request.getParameter("foto");
-		int tipo = Integer.parseInt(request.getParameter("tipo"));
-		Imovel newImovel = new Imovel(preco, endereco, status, descricao, foto, tipo);
+		String tipo = request.getParameter("tipo");
+		int data_inicial = Integer.parseInt(request.getParameter("data_inicial"));
+		int data_final = Integer.parseInt(request.getParameter("data_final"));
+		Imovel newImovel = new Imovel(preco, endereco, status, descricao, foto, tipo, data_inicial, data_final);
 		imovelDAO.insertImovel(newImovel);
 		response.sendRedirect("list");
 	}
@@ -102,9 +104,10 @@ public class ImovelController extends HttpServlet {
 		String status = request.getParameter("status");
 		String descricao = request.getParameter("descricao");
 		String foto = request.getParameter("foto");
-		int tipo = Integer.parseInt(request.getParameter("tipo"));
-
-		Imovel imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo);
+		String tipo = request.getParameter("tipo");
+		int data_inicial = Integer.parseInt(request.getParameter("data_inicial"));
+		int data_final = Integer.parseInt(request.getParameter("data_final"));
+		Imovel imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo, data_inicial, data_final);
 		imovelDAO.updateImovel(imovel);
 		response.sendRedirect("list");
 	}
