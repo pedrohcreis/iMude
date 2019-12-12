@@ -8,23 +8,27 @@
     <link rel="stylesheet" href="formatos.css">
 	<title>Imóveis para Locação</title>
 </head>
-<body>
+<body class="tela">
 	<center>
 		<h1>Imóveis disponíveis</h1>
 	</center>
-	<div align="center">
-	<tr>
-		<td>preco</td>
-		<td>endereco</td>
-		<td>descricao</td>
-	</tr>
 	<c:forEach var="imovel" items="${listImovel}">
-    	<tr>
-    		<td><c:out value="${imovel.preco}" /></td>
-    		<td><c:out value="${imovel.endereco}" /></td>
-    		<td><c:out value="${imovel.descricao}" /></td>
-    	</tr>
+		<div align="center">
+			</br>
+			<tr>
+				<td>Preço: R$</td>
+	    		<td><c:out value="${imovel.preco}" /></td>
+	    		</br>
+	    		<td>Endereço: </td>
+	    		<td><c:out value="${imovel.endereco}" /></td>
+	    		</br>
+	    		<td>Descrição: </td>
+	    		<td><c:out value="${imovel.descricao}" /></td>
+	    		</br>
+	    		</br>
+    		</tr>
+		</div>
     </c:forEach>
     </div>
-</body>
+</body class="tela">
 </html>
