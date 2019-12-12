@@ -9,11 +9,26 @@
 	<title>Imóveis para Locação</title>
 </head>
 <body class="tela">
-	<center>
-		<h1>Imóveis disponíveis</h1>
-	</center>
+	<style>
+	.title {
+		background-image: url("Files/aluguel.jpg");
+    	opacity: 0.7;
+    	background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-position: cover;
+  		background-size: cover;
+	}
+	</style>
+	<div class="title" align="center">
+		<div align="center" style="background-color: #00ACEE">
+			<h1>Imóveis disponíveis</h1>
+		</div>
+		<p color="black">Nesta seção estão listados todos os imóveis disponíveis para locação cadastrados em nosso sistema. Caso tenha interesse em algum imóvel, clique no botão <b>mais detalhes</b> para ver maiores detalhes sobre o imóvel e clique em alugar para iniciar sua solicitação.</p>
+		 </br>
+	</div>
 	<style>
 	.outer {
+	   background-color: #FFFFFF;
        border: 1px solid black;
        margin-top: 5px;
        margin-bottom: 5px;
