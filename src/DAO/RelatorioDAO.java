@@ -20,7 +20,7 @@ public class RelatorioDAO {
 	private String jdbcUsername = "t1g5";
 	private String jdbcPassword = "VnzHBEh";
 
-	private static final String SELECT_RELATORIO = "SELECT id, preco, endereco, status, tipo, data_inicial, data_final FROM Imoveis WHERE tipo = ? AND data_inicial <= ? AND data_final >= ?;";
+	private static final String SELECT_RELATORIO = "SELECT id, preco, endereco, status, tipo, data_inicial, data_final FROM Imoveis WHERE tipo = ? AND status = ? AND data_inicial <= ? AND data_final >= ?;";
 
 	public RelatorioDAO() {
 	}
@@ -41,7 +41,7 @@ public class RelatorioDAO {
 		return connection;
 	}
 
-	public List<Imovel> selecionarImoveis() {
+	public List<Imovel> selecionarImoveis(String tipo, String status, int data_inicial, int data_final) {
 		System.out.println(SELECT_RELATORIO);
 		// Criando array de imoveis
 		List<Imovel> imoveis = new ArrayList<>();
@@ -50,7 +50,10 @@ public class RelatorioDAO {
 
 				// Step 2:Create a statement using connection object
 			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_RELATORIO);) {
-			System.out.println(preparedStatement);
+			preparedStatement.setString(1, tipo);
+			preparedStatement.setString(2, status);
+			preparedStatement.setInt(3, data_inicial);
+			preparedStatement.setInt(4, data_final);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -59,10 +62,10 @@ public class RelatorioDAO {
 				int id = rs.getInt("id");
 				float preco = rs.getFloat("preco");
 				String endereco = rs.getString("endereco");
-				String status = rs.getString("status");
-				String tipo = rs.getString("tipo");
-				int data_inicial = rs.getInt("data_inicial");
-				int data_final = rs.getInt("data_final");
+				status = rs.getString("status");
+				tipo = rs.getString("tipo");
+				data_inicial = rs.getInt("data_inicial");
+				data_final = rs.getInt("data_final");
 				
 				imoveis.add(new Imovel(id, preco, endereco, status, tipo, data_inicial, data_final));
 			}

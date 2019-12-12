@@ -8,10 +8,56 @@
     <style type="text/css"> @import url("./formatos.css"); </style>
     <title>Tela inicial</title>
 </head>
+<style>
+	body {
+    	background-image: url("Files/area_do_gerente.jpg");
+    	opacity: 0.7;
+    	background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-position: cover;
+  		background-size: cover;
+	}
+</style>
+
 <body class="tela">
-    <h1 class="title">Área do Gerente</h1>
-    <p>Ações disponíveis</p>
-    <p><a href="relatorio-form.jsp">Gerenciar Relatórios</a></p>
-    <p><a href="imovel-form.jsp">Gerenciar Imóveis</a></p>
+	<style>
+	.outer {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+    }
+	</style>
+	<div align="center" class="outer">
+		<h1 class="title">Área do Gerente</h1>
+	</div>
+	
+    <style>
+	.outer2 {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+       margin-right: 350px;
+       margin-top: 20px;
+       width: 400px;
+    }
+    .button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 24px;
+	}
+    </style>
+	<div align="center" class="outer2">
+		<h2>Ações disponíveis</h2>
+  		<a href="relatorio-form.jsp"><button type="button" class="button">Gerenciar Relatórios</button></a>
+        </br>
+        </br>
+        <a href="imovel-form.jsp"><button type="button" class="button">Gerenciar Imóveis</button></a>
+        </br>
+        </br>
+        </br>
+	</div>
 </body>
 </html>

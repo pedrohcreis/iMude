@@ -9,40 +9,16 @@
 <body>
 	<center>
 		<h1>Gerenciamento de Relatório</h1>
-        <h2>
-        	<a href="gerarRelatorio">Gerar Relatorio</a>
-        </h2>
 	</center>
     <div align="center">
         
-        <table border="1" cellpadding="5">       
-            <tr>
-                <th>Tipo do Negócio: </th>
-                <td>
-                	<input type="text" name="tipo" size="45"
-                			value="<c:out value='${imovel.tipo}' />"
-                		/>
-                </td>
-            </tr>
-            <tr>
-                <th>Data Inicial: </th>
-                <td>
-                	<input type="int" name="data_inicial" size="15"
-                			value="<c:out value='${imovel.data_inicial}' />"
-                	/>
-                </td>
-            </tr>
-            <tr>
-                <th>Data Final: </th>
-                <td>
-                	<input type="int" name="data_final" size="15"
-                			value="<c:out value='${imovel.data_final}' />"
-                	/>
-                </td>
-            </tr>
-        </table>
-        
-        </form>
+        <form name="cadastroForm" method="post" action="/iMude/gerarRelatorio">
+       <p>Tipo de negócio: <input type="text" name="tipo"> </p>
+       <p>Status do negócio: <input type="text" name="status"> </p>
+       <p>Data Inicial: <input type="text" name="data_inicial"> </p>
+       <p>Data Final: <input type="text" name="data_final"> </p>
+       <p><input type="submit" value="Gerar Relatorio"> </p>
+    </form>
     </div>	
 </body>
 </html>

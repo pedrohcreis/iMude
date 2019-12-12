@@ -17,18 +17,14 @@
                 <th>Endereço</th>
                 <th>Status</th>
                 <th>Tipo</th>
-                <th>Data Inicial</th>
-                <th>Data Final</th>
             </tr>
-            <c:forEach var="imovel" items="${listRelatorio}">
+            <c:forEach var="listRelatorio" items="${listRelatorio}">
                 <tr>
-                    <td><c:out value="${imovel.id}" /></td>
-                    <td><c:out value="${imovel.preco}" /></td>
-                    <td><c:out value="${imovel.endereco}" /></td>
-                    <td><c:out value="${imovel.status}" /></td>
-                    <td><c:out value="${imovel.tipo}" /></td>
-                    <td><c:out value="${imovel.data_inicial}" /></td>
-                    <td><c:out value="${imovel.data_final}" /></td>
+                    <td><c:out value="${listRelatorio.id}" /></td>
+                    <td><c:out value="${listRelatorio.preco}" /></td>
+                    <td><c:out value="${listRelatorio.endereco}" /></td>
+                    <td><c:out value="${listRelatorio.status}" /></td>
+                    <td><c:out value="${listRelatorio.tipo}" /></td>
                 </tr>
             </c:forEach>
         </table>
