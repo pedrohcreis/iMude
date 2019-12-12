@@ -45,7 +45,7 @@
 	  text-decoration: none;
 	  display: inline-block;
 	  font-size: 16px;
-}
+	}
 	</style>
 	<div align="center" class="quest_box">
 		<h2>Qual a sua intenção?</h2>

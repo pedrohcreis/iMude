@@ -37,14 +37,23 @@
        margin-top: 20px;
        width: 400px;
     }
+    .button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 24px;
+	}
     </style>
 	<div align="center" class="outer2">
 		<h2>Veja nossos serviços</h2>
-		</br>
-  		<a href="aluguel.jsp"><button type="button" style="background-color: #4CAF50; font-size: 24px;">Imóveis para Aluguel</button></a>
+  		<a href="aluguel.jsp"><button type="button" class="button">Imóveis para Aluguel</button></a>
         </br>
         </br>
-        <a href="compra.jsp"><button type="button" style="background-color: #4CAF50; font-size: 24px;">Imóveis para Compra</button></a>
+        <a href="compra.jsp"><button type="button" class="button">Imóveis para Compra</button></a>
         </br>
         </br>
         </br>
