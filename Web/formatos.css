@@ -13,3 +13,8 @@
 .tela {
     background-color: #ADD8E6;
 }
+
+.bgImage {
+	background-image: url("Files/locacao.jpg");
+	background-color: #cccccc;
+}

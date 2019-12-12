@@ -26,7 +26,7 @@
 		<div class="outer" align="center">
 			</br>
 			<tr>
-				<img src="Files/casa${count}.jpg" width="200" height="120">
+				<img src="Files/casa${count}.jpg" width="400" height="240">
 				</br>
 				<td><b>Preço:</b> R$</td>
 	    		<td><c:out value="${imovel.preco}" /></td>
