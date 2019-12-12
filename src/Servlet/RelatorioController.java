@@ -20,8 +20,7 @@ import Model.Imovel;
  * This servlet acts as a page controller for the application, handling all
  * requests from the user.
  */
-
-@WebServlet("/relatorio")
+@WebServlet(urlPatterns = {"/relatorio", "/gerarRelatorio"})
 public class RelatorioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RelatorioDAO RelatorioDAO;
@@ -45,6 +44,9 @@ public class RelatorioController extends HttpServlet {
 			case "/gerarRelatorio":
 				mostrarRelatorio(request, response);
 				break;
+			default:
+				mostrarFormulario(request, response);
+				break;
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
@@ -58,6 +60,13 @@ public class RelatorioController extends HttpServlet {
 		List<Imovel> listRelatorio = RelatorioDAO.selecionarImoveis();
 		request.setAttribute("listRelatorio", listRelatorio);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("relatorio-list.jsp");
+		dispatcher.forward(request, response);
+	}
+	
+// Mostrar formulario
+	private void mostrarFormulario(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("relatorio-form.jsp");
 		dispatcher.forward(request, response);
 	}
 }

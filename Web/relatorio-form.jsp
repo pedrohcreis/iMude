@@ -35,8 +35,8 @@
             <tr>
                 <th>Data Final: </th>
                 <td>
-                	<input type="int" name="periodo_final" size="15"
-                			value="<c:out value='${imovel.periodo_final}' />"
+                	<input type="int" name="data_final" size="15"
+                			value="<c:out value='${imovel.data_final}' />"
                 	/>
                 </td>
             </tr>
