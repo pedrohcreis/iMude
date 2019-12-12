@@ -1,11 +1,13 @@
 package Servlet;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.CompradorDAO;
 import Model.Comprador;
 
+
+@WebServlet(urlPatterns = {"/comprador", "/comprador-insert", "/comprador-delete", "/comprador-update"})
 public class CompradorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CompradorDAO compradorDAO;
@@ -29,16 +33,16 @@ public class CompradorController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
-
+		System.out.println("ACTION: " + action);
 		try {
 			switch (action) {
-			case "/insert":
+			case "/comprador-insert":
 				insertComprador(request, response);
 				break;
-			case "/delete":
+			case "/comprador-delete":
 				deleteComprador(request, response);
 				break;
-			case "/update":
+			case "/comprador-update":
 				updateComprador(request, response);
 				break;
 			default:
@@ -61,30 +65,28 @@ public class CompradorController extends HttpServlet {
 // Inserção de Usuario
 	private void insertComprador(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
+		// String id = request.getParameter("id");
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
 		String CPF = request.getParameter("CPF");
-		Comprador newComprador = new Comprador(id, nome, email, CPF);
+		String password = request.getParameter("password");
+		Comprador newComprador = new Comprador(nome, email, CPF,password);
 		compradorDAO.insertComprador(newComprador);
-		response.sendRedirect("list");
 	}
 // Atualização de Usuario
 	private void updateComprador(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
 		String CPF = request.getParameter("CPF");
-		Comprador book = new Comprador(id, nome, email, CPF);
-		compradorDAO.updateComprador(book);
-		response.sendRedirect("list");
+		String password = request.getParameter("password");
+		Comprador book = new Comprador(nome, email, CPF, password);
+		compradorDAO.updateComprador(book);	
 	}
 // Eliminar Usuario
 	private void deleteComprador(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		compradorDAO.deleteComprador(id);
-		response.sendRedirect("list");
 	}
 }

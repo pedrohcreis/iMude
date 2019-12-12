@@ -15,8 +15,8 @@ public class CompradorDAO {
 	private String jdbcUsername = "t1g5";
 	private String jdbcPassword = "VnzHBEh";
 	
-	private static final String INSERT_COMPRADOR_SQL = "INSERT INTO Comprador" + "  (id, nome, email, CPF) VALUES "
-			+ " (?, ?);";
+	private static final String INSERT_COMPRADOR_SQL = "INSERT INTO Comprador" + "  (id, nome, email, CPF, password) VALUES "
+			+ " (?, ?, ?, ?, ?);";
 
 	private static final String SELECT_COMPRADOR_BY_ID = "select id, nome, email, CPF from Comprador where id =?";
 	private static final String SELECT_ALL_COMPRADORES = "select * from Comprador";
@@ -48,8 +48,11 @@ public class CompradorDAO {
 		// try-with-resource statement will auto close the connection.
 		try (Connection connection = getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_COMPRADOR_SQL)) {
-			preparedStatement.setString(1, comprador.getCPF());
+			preparedStatement.setString(1, comprador.getId());
 			preparedStatement.setString(2, comprador.getNome());
+			preparedStatement.setString(3, comprador.getEmail());
+			preparedStatement.setString(4, comprador.getCPF());
+			preparedStatement.setString(5, comprador.getPassword());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -70,11 +73,12 @@ public class CompradorDAO {
 
 			// Step 4: Process the ResultSet object.
 			while (rs.next()) {
-				int id1 = rs.getInt("id");
+				String id1 = rs.getString("id");
 				String nome = rs.getString("nome");
 				String email = rs.getString("email");
 				String CPF = rs.getString("CPF");
-				comprador = new Comprador(id1, nome, email, CPF);
+				String password = rs.getString("password");
+				comprador = new Comprador(id1, nome, email, CPF, password);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -97,11 +101,12 @@ public class CompradorDAO {
 
 			// Step 4: Process the ResultSet object.
 			while (rs.next()) {
-				int id = rs.getInt("id");
+				String id = rs.getString("id");
 				String nome = rs.getString("nome");
 				String email = rs.getString("email");
 				String CPF = rs.getString("CPF");
-				compradores.add(new Comprador(id, nome, email, CPF));
+				String password = rs.getString("password");
+				compradores.add(new Comprador(id, nome, email, CPF, password));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -125,7 +130,7 @@ public class CompradorDAO {
 				PreparedStatement statement = connection.prepareStatement(UPDATE_COMPRADOR_SQL);) {
 			statement.setString(1, comprador.getData());
 			statement.setString(2, comprador.getNome());
-			statement.setInt(3, comprador.getId());
+			statement.setString(3, comprador.getId());
 
 			rowUpdated = statement.executeUpdate() > 0;
 		}

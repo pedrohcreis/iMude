@@ -3,24 +3,39 @@ package Model;
 public class Comprador
 {
 	// Atributos
-	int id;
+	String id;
 	String nome;
 	String email;
 	String CPF;
+	String password;
 
 	// Construtor
-	public Comprador(int id, String nome, String email, String CPF)
+	public Comprador(String id, String nome, String email, String CPF, String password)
 	{
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.CPF = CPF;
+		this.password = password;
+	}
+	
+	public Comprador(String nome, String email, String CPF, String password)
+	{
+		this.nome = nome;
+		this.email = email;
+		this.CPF = CPF;
+		this.password = password;
 	}
 
 	// Getters
-	public int getId()
+	public String getId()
 	{
 		return id;
+	}
+	
+	public String getPassword()
+	{
+		return password;
 	}
 
 	public String getNome()
@@ -39,7 +54,7 @@ public class Comprador
 	}
 
 	// Setters
-	public void setId(int id)
+	public void setId(String id)
 	{
 		this.id = id;
 	}

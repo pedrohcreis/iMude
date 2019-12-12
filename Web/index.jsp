@@ -17,12 +17,13 @@
                title=" Veja os imóveis que estão disponíveis para Aluguel">Imóveis para Aluguel</a>
         </li>
         <li>
-            <a href="compra.html"
+            <a href="compra.jsp"
                title=" Veja os imóveis que estão disponíveis para a Compra">Imóveis para Compra</a>
         </li>
     </ul>
-    <p class="especializado">Usuários especializados</p>
+    <p class="especializado">Área dos Usuários</p>
     <p class="especializado"><a href="area_do_gerente.jsp">Área do Gerente</a></p>
     <p class="especializado"><a href="corretor.html">Área do Corretor</a></p>
+    <p class="especializado"><a href="comprador.jsp">Área do Cliente</a></p>
 </body>
 </html>
