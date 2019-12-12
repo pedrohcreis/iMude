@@ -38,6 +38,17 @@ public class Imovel
 		this.data_inicial = data_inicial;
 		this.data_final = data_final;
 	}
+	
+	public Imovel(int id, float preco, String endereco, String status, String tipo, int data_inicial, int data_final)
+	{
+		this.id = id;
+		this.preco = preco;
+		this.endereco = endereco;
+		this.status = status;
+		this.tipo = tipo;
+		this.data_inicial = data_inicial;
+		this.data_final = data_final;
+	}
 
 	// Getters
 	public int getId()

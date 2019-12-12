@@ -10,7 +10,7 @@
 	<center>
 		<h1>Gerenciamento de Relatório</h1>
         <h2>
-        	<a href="gerar-relatorio">Gerar Relatorio</a>
+        	<a href="gerarRelatorio">Gerar Relatorio</a>
         </h2>
 	</center>
     <div align="center">
