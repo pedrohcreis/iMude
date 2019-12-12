@@ -17,6 +17,7 @@
   		background-attachment: fixed;
   		background-position: cover;
   		background-size: cover;
+  		text-size: 16px;
 	}
 	</style>
 	<div class="title" align="center">
@@ -35,6 +36,16 @@
        margin-right: 350px;
        margin-left: 350px;
        }
+    .button {
+	  background-color: #008CBA; /* Blue */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	}
 	</style>
 	<c:set var="count" value="1" scope="page" />
 	<c:forEach var="imovel" items="${listImovel}">
@@ -53,7 +64,7 @@
 	    		<td><c:out value="${imovel.descricao}" /></td>
 	    		</br>	
 	    		</br>
-    			<a href="imovel.jsp"><button type="button" style="background-color: #008CBA;">Mais Detalhes</button></a>
+    			<a href="imovel.jsp"><button type="button" class="button">Mais Detalhes</button></a>
 	    		</br>	
 	    		</br>
     		</tr>
