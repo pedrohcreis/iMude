@@ -12,21 +12,38 @@
 	<center>
 		<h1>Imóveis disponíveis</h1>
 	</center>
+	<style>
+	.outer {
+       border: 1px solid black;
+       margin-top: 5px;
+       margin-bottom: 5px;
+       margin-right: 350px;
+       margin-left: 350px;
+       }
+	</style>
+	<c:set var="count" value="1" scope="page" />
 	<c:forEach var="imovel" items="${listImovel}">
-		<div align="center">
+		<div class="outer" align="center">
 			</br>
 			<tr>
-				<td>Preço: R$</td>
+				<img src="Files/casa${count}.jpg" width="200" height="120">
+				</br>
+				<td><b>Preço:</b> R$</td>
 	    		<td><c:out value="${imovel.preco}" /></td>
 	    		</br>
-	    		<td>Endereço: </td>
+	    		<td><b>Endereço:</b></td>
 	    		<td><c:out value="${imovel.endereco}" /></td>
 	    		</br>
-	    		<td>Descrição: </td>
+	    		<td><b>Descrição:</b></td>
 	    		<td><c:out value="${imovel.descricao}" /></td>
+	    		</br>	
 	    		</br>
+	    		<a href="imovel.jsp"><button type="button" style="background-color: #008CBA;">Mais Detalhes</button></a>
+	    		</br>	
 	    		</br>
     		</tr>
+    		<c:set var="count" value="${count + 1}" scope="page" />
+			</form>
 		</div>
     </c:forEach>
     </div>
