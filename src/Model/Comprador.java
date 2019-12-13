@@ -7,24 +7,24 @@ public class Comprador
 	String nome;
 	String email;
 	String CPF;
-	String password;
+	String senha;
 
 	// Construtor
-	public Comprador(String id, String nome, String email, String CPF, String password)
+	public Comprador(String id, String nome, String email, String CPF, String senha)
 	{
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.CPF = CPF;
-		this.password = password;
+		this.senha = senha;
 	}
 	
-	public Comprador(String nome, String email, String CPF, String password)
+	public Comprador(String nome, String email, String CPF, String senha)
 	{
 		this.nome = nome;
 		this.email = email;
 		this.CPF = CPF;
-		this.password = password;
+		this.senha = senha;
 	}
 
 	// Getters
@@ -33,9 +33,9 @@ public class Comprador
 		return id;
 	}
 	
-	public String getPassword()
+	public String getSenha()
 	{
-		return password;
+		return senha;
 	}
 
 	public String getNome()

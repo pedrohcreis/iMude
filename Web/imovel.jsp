@@ -6,7 +6,7 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="formatos.css">
-	<title>Insert title here</title>
+	<title>Detalhes Imovel</title>
 </head>
 <body class="tela">
 	<div class="imovel-cont" align="center">

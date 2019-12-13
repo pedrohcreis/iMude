@@ -15,10 +15,10 @@ public class CompradorDAO {
 	private String jdbcUsername = "t1g5";
 	private String jdbcPassword = "VnzHBEh";
 	
-	private static final String INSERT_COMPRADOR_SQL = "INSERT INTO Comprador" + "  (id, nome, email, CPF, password) VALUES "
+	private static final String INSERT_COMPRADOR_SQL = "INSERT INTO Comprador" + "  (id, nome, email, CPF, senha) VALUES "
 			+ " (?, ?, ?, ?, ?);";
 
-	private static final String SELECT_COMPRADOR_BY_ID = "select id, nome, email, CPF from Comprador where id =?";
+	private static final String SELECT_COMPRADOR_BY_EMAIL = "select id, nome, email, CPF, senha from Comprador where email =?";
 	private static final String SELECT_ALL_COMPRADORES = "select * from Comprador";
 	private static final String DELETE_COMPRADOR_SQL = "delete from Comprador where id = ?;";
 	private static final String UPDATE_COMPRADOR_SQL = "update Comprador set  nome= ?, email= ?, CPF= ? where id = ?;";
@@ -52,7 +52,7 @@ public class CompradorDAO {
 			preparedStatement.setString(2, comprador.getNome());
 			preparedStatement.setString(3, comprador.getEmail());
 			preparedStatement.setString(4, comprador.getCPF());
-			preparedStatement.setString(5, comprador.getPassword());
+			preparedStatement.setString(5, comprador.getSenha());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -60,25 +60,25 @@ public class CompradorDAO {
 		}
 	}
 
-	public Comprador selectComprador(int id) {
+	public Comprador selectComprador(String email) {
 		Comprador comprador = null;
 		// Step 1: Establishing a Connection
 		try (Connection connection = getConnection();
 				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_COMPRADOR_BY_ID);) {
-			preparedStatement.setInt(1, id);
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_COMPRADOR_BY_EMAIL);) {
+			preparedStatement.setString(1, email);
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
 			// Step 4: Process the ResultSet object.
 			while (rs.next()) {
-				String id1 = rs.getString("id");
+				String id = rs.getString("id");
 				String nome = rs.getString("nome");
-				String email = rs.getString("email");
+				String email1 = rs.getString("email");
 				String CPF = rs.getString("CPF");
-				String password = rs.getString("password");
-				comprador = new Comprador(id1, nome, email, CPF, password);
+				String senha = rs.getString("senha");
+				comprador = new Comprador(id, nome, email1, CPF, senha);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -105,8 +105,8 @@ public class CompradorDAO {
 				String nome = rs.getString("nome");
 				String email = rs.getString("email");
 				String CPF = rs.getString("CPF");
-				String password = rs.getString("password");
-				compradores.add(new Comprador(id, nome, email, CPF, password));
+				String senha = rs.getString("senha");
+				compradores.add(new Comprador(id, nome, email, CPF, senha));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);

@@ -71,7 +71,7 @@
     </style>
     <div align="center" class="outer3">
 	    <h2>Área dos Usuários</h2>
-	    <p style="font-size: 20px;"><a href="comprador.jsp">Área do Cliente</a></p>
+	    <p style="font-size: 20px;"><a href="login.jsp">Área do Cliente</a></p>
 	    <p style="font-size: 20px;"><a href="corretor.html">Área do Corretor</a></p>
 	    <p style="font-size: 20px;"><a href="area_do_gerente.jsp">Área do Gerente</a></p>
     </div>
