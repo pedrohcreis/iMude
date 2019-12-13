@@ -49,7 +49,7 @@
 	</style>
 	<div align="center" class="quest_box">
 		<h2>Qual a sua intenção?</h2>
-    	<a href="/iMude/imoveis"><button class="button" type="button">Comprar um Imóvel</button></a>
+    	<a href="/iMude/imoveis-list-compra"><button class="button" type="button">Comprar um Imóvel</button></a>
     	</br>
     	</br>
     	<a href="/iMude/contratos"><button class="button" type="button">Meus Contratos</button></a>

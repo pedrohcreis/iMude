@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.ImovelDAO;
 import Model.Imovel;
 
-@WebServlet(urlPatterns = {"/imoveis", "/imoveis-new", "/imoveis-insert", "/imoveis-delete", "/imoveis-edit", "/imoveis-update", "/imoveis-list-gerente", "/imoveis-new-gerente"})
+@WebServlet(urlPatterns = {"/imoveis", "/imoveis-new", "/imoveis-insert", "/imoveis-delete", "/imoveis-edit", "/imoveis-update", "/imoveis-list-gerente", "/imoveis-new-gerente", "/imoveis-list-aluguel", "/imoveis-list-compra"})
 public class ImovelController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ImovelDAO imovelDAO;
@@ -55,18 +55,30 @@ public class ImovelController extends HttpServlet {
 			case "/imoveis-new-gerente":
 				showNewForm(request, response);
 				break;
-			default:
-				listImovel(request, response);
+			case "/imoveis-list-aluguel":
+				listImovelAluguel(request, response);
+				break;
+			case "/imoveis-list-compra":
+				listImovelCompra(request, response);
 				break;
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
 		}
 	}
-// Listar imoveis
-	private void listImovel(HttpServletRequest request, HttpServletResponse response)
+// Listar imoveis aluguel
+	private void listImovelAluguel(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		List<Imovel> listImovel = imovelDAO.selectAllImoveis();
+		List<Imovel> listImovel = imovelDAO.selectAllImoveisAluguel();
+		request.setAttribute("listImovel", listImovel);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("imovel-list.jsp");
+		dispatcher.forward(request, response);
+	}
+	
+// Listar imoveis compra
+	private void listImovelCompra(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		List<Imovel> listImovel = imovelDAO.selectAllImoveisCompra();
 		request.setAttribute("listImovel", listImovel);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("imovel-list.jsp");
 		dispatcher.forward(request, response);

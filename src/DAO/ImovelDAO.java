@@ -23,8 +23,8 @@ public class ImovelDAO {
 	private static final String SELECT_ALL_IMOVEIS = "select * from Imoveis";
 	private static final String DELETE_IMOVEL_SQL = "delete from Imoveis where id = ?;";
 	private static final String UPDATE_IMOVEL_SQL = "update Imoveis set preco = ?, endereco = ?, status = ?, descricao = ?, foto = ?, tipo = ?, dataInicial = ?, dataFinal = ? where id = ?;";
-	private static final String SELECT_COMPRA_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = \"compra\" ;";
-	private static final String SELECT_ALUGUEL_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = \"aluguel\" ;";
+	private static final String SELECT_ALL_IMOVEIS_COMPRA = "select * from Imoveis where tipo = \"compra\" ;";
+	private static final String SELECT_ALL_IMOVEIS_ALUGUEL = "select * from Imoveis where tipo = \"aluguel\" ;";
 	
 	public ImovelDAO() {
 		
@@ -104,6 +104,70 @@ public class ImovelDAO {
 
 				// Step 2:Create a statement using connection object
 			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMOVEIS);) {
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				Float preco = rs.getFloat("preco");
+				String endereco = rs.getString("endereco");
+				String status = rs.getString("status");
+				String descricao = rs.getString("descricao");
+				String foto = rs.getString("foto");
+				String tipo = rs.getString("tipo");
+				int dataInicial = rs.getInt("dataInicial");
+				int dataFinal = rs.getInt("dataFinal");
+				imoveis.add(new Imovel(id, preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal));
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return imoveis;
+	}
+	
+	public List<Imovel> selectAllImoveisCompra() {
+
+		// using try-with-resources to avoid closing resources (boiler plate code)
+		List<Imovel> imoveis = new ArrayList<>();
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+
+				// Step 2:Create a statement using connection object
+			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMOVEIS_COMPRA);) {
+			System.out.println(preparedStatement);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				Float preco = rs.getFloat("preco");
+				String endereco = rs.getString("endereco");
+				String status = rs.getString("status");
+				String descricao = rs.getString("descricao");
+				String foto = rs.getString("foto");
+				String tipo = rs.getString("tipo");
+				int dataInicial = rs.getInt("dataInicial");
+				int dataFinal = rs.getInt("dataFinal");
+				imoveis.add(new Imovel(id, preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal));
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return imoveis;
+	}
+	
+	public List<Imovel> selectAllImoveisAluguel() {
+
+		// using try-with-resources to avoid closing resources (boiler plate code)
+		List<Imovel> imoveis = new ArrayList<>();
+		// Step 1: Establishing a Connection
+		try (Connection connection = getConnection();
+
+				// Step 2:Create a statement using connection object
+			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_IMOVEIS_ALUGUEL);) {
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
