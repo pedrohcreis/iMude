@@ -47,6 +47,7 @@
                 </tr>
             </c:forEach>
         </table>
-    </div>	
+    </div>
+    <a href="area_do_corretor.jsp"><button type="button" class="button">Voltar</button></a>
 </body>
 </html>
