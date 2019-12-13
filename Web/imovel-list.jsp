@@ -24,7 +24,7 @@
 		<div align="center" style="background-color: #00ACEE">
 			<h1>Imóveis disponíveis</h1>
 		</div>
-		<p color="black">Nesta seção estão listados todos os imóveis disponíveis cadastrados em nosso sistema. Caso tenha interesse em algum imóvel, clique no botão <b>mais detalhes</b> para ver maiores detalhes sobre o imóvel e clique em alugar para iniciar sua solicitação.</p>
+		<p color="black">Nesta seção estão listados todos os imóveis disponíveis cadastrados em nosso sistema. Caso tenha interesse em algum imóvel, clique no botão <b>mais detalhes</b>.</p>
 		 </br>
 	</div>
 	<style>
@@ -52,15 +52,14 @@
 			</br>
 			<tr>
 				<img src="Files/casa${imovel.id}.jpg" width="400" height="240">
-				</br>
+				</br></br>
 				<td><b>Preço:</b> R$</td>
 	    		<td><c:out value="${imovel.preco}" /></td>
 	    		</br>
 	    		<td><b>Endereço:</b></td>
 	    		<td><c:out value="${imovel.endereco}" /></td>
-	    		</br>
-	    		<td><b>Descrição:</b></td>
-	    		<td><c:out value="${imovel.descricao}" /></td>
+	    		<!-- <td><b>Descrição:</b></td> -->
+	    		<!-- <td><c:out value="${imovel.descricao}" /></td> -->
 	    		</br>	
 	    		</br>
     			<a href="imoveis-new?id=<c:out value='${imovel.id}' />"><button type="button" class="button">Mais Detalhes</button></a>
