@@ -66,7 +66,7 @@
 		</br></br>
 		<a href="visita-form.jsp"><button class="button" type="button">Agendar Visita</button></a>
 		</br></br>
-		<a href="/iMude/imoveis-list-aluguel"><button class="button" type="button">Fechar Negócio</button></a>
+		<a href="index.jsp"><button class="button" type="button">Fechar Negócio</button></a>
 		</br></br>
 	</div>
 </body>
