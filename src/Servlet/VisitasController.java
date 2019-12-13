@@ -17,7 +17,7 @@ import Model.Visita;
 /**
  * Servlet implementation class TesteEntidade
  */
-@WebServlet(urlPatterns = {"/visitas", "/visitas-new", "/visitas-delete", "/visitas-edit", "/visitas-update"})
+@WebServlet(urlPatterns = {"/visitas", "/visitas-new", "/visitas-delete", "/visitas-edit", "/visitas-update", "/visitas-insert"})
 public class VisitasController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private VisitaDAO visitaDAO;
@@ -90,16 +90,18 @@ public class VisitasController extends HttpServlet {
 	}
 // Insercao de Visita
 	private void insertVisita(HttpServletRequest request, HttpServletResponse response) 
-			throws SQLException, IOException {
-		int idImovel = Integer.parseInt(request.getParameter("idImovel"));
-		int idCorretor = Integer.parseInt(request.getParameter("idCorretor"));
-		int idComprador = Integer.parseInt(request.getParameter("idComprador"));
-		int idLocatario = Integer.parseInt(request.getParameter("idLocatario"));
+			throws SQLException, IOException, ServletException {
+		int idImovel = 10;
+		int idCorretor = 2;
+		int idComprador = 5;
+		int idLocatario = 7;
 		String data = request.getParameter("data");
 		String horario = request.getParameter("horario");
 		Visita newVisita= new Visita(idImovel, idCorretor, idComprador, idLocatario, data, horario);
 		visitaDAO.insertVisita(newVisita);
-		response.sendRedirect("list");
+		//response.sendRedirect("list");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("visita-sucesso.jsp");
+		dispatcher.forward(request, response);
 	}
 // Atualizacao de Visita
 	private void updateVisita(HttpServletRequest request, HttpServletResponse response) 

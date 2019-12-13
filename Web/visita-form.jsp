@@ -4,44 +4,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-	<title>User Management Application</title>
+	<title>Aplicação de Cadastro de Visita</title>
 </head>
 <body>
 	<center>
-		<h1>User Management</h1>
-        <h2>
-        	<a href="new">Add New Visita</a>
-        	&nbsp;&nbsp;&nbsp;
-        	<a href="list">List All Visitas</a>
-        	
-        </h2>
+		<h1>Marque sua visita!</h1>
 	</center>
     <div align="center">
     
-		<c:if test="${user != null}">
-			<form action="update" method="post">
-        </c:if>
-        
-        <c:if test="${user == null}">
-			<form action="insert" method="post">
-        </c:if>
+	<form action="/iMude/visitas-insert" method="post">
         
         <table border="1" cellpadding="5">
             <caption>
             	<h2>
-            		<c:if test="${user != null}">
-            			Edit Visita
-            		</c:if>
-            		<c:if test="${user == null}">
-            			Add New Visita
-            		</c:if>
+            			Marcar Visita
             	</h2>
             </caption>
-        		<c:if test="${user != null}">
-        			<input type="hidden" name="id" value="<c:out value='${user.id}' />" />
-        		</c:if>            
             <tr>
-                <th>Visita Data: </th>
+                <th>Data: </th>
                 <td>
                 	<input type="text" name="data" size="45"
                 			value="<c:out value='${visita.data}' />"
@@ -49,7 +29,7 @@
                 </td>
             </tr>
             <tr>
-                <th>Visita Horario: </th>
+                <th>Horario: </th>
                 <td>
                 	<input type="text" name="horario" size="45"
                 			value="<c:out value='${visita.horario}' />"
@@ -58,7 +38,7 @@
             </tr>
             <tr>
             	<td colspan="2" align="center">
-            		<input type="submit" value="Save" />
+            		<input type="submit" value="Marcar" />
             	</td>
             </tr>
         </table>

@@ -15,7 +15,7 @@ public class VisitaDAO {
 	private String jdbcUsername = "t1g5";
 	private String jdbcPassword = "VnzHBEh";
 	
-	private static final String INSERT_VISITA_SQL = "INSERT INTO Visitas" + "  (idImovel, idCorretor, idComprador, idLocatario, data, hora) VALUES "
+	private static final String INSERT_VISITA_SQL = "INSERT INTO Visitas" + "  (idImovel, idCorretor, idComprador, idLocatario, data, horario) VALUES "
 			+ " (?, ?, ?, ?, ?, ?);";
 
 	private static final String SELECT_VISITA_BY_ID = "select id, idImovel, idCorretor, idComprador, idLocatario, data, horario from Visitas where id =?";
