@@ -7,9 +7,17 @@
 	<title>Aplicação de Cadastro de Visita</title>
 </head>
 <body>
-	<center>
+	<style>
+	.outer {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+    }
+	</style>
+	<div align="center" class="outer">
+		<center>
 		<h1>Marque sua visita!</h1>
-	</center>
+		</center>
+	</div>
     <div align="center">
     
 	<form action="/iMude/visitas-insert" method="post">

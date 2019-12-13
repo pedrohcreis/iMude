@@ -6,9 +6,17 @@
 	<title>Aplicação de Gerenciamento de Visitas</title>
 </head>
 <body>
-	<center>
+	<style>
+	.outer {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+    }
+	</style>
+	<div align="center" class="outer">
+		<center>
 		<h1>Gerenciamento de Visitas</h1>
-	</center>
+		</center>
+	</div>
     <div align="center">
         <table border="1" cellpadding="5">
             <caption><h2>Lista das Visitas</h2></caption>
