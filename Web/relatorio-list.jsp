@@ -5,12 +5,54 @@
 <head>
 	<title>Aplicação de Gerenciamento de Relatório</title>
 </head>
+
+<style>
+	body {
+    	background-image: url("Files/relatorio.jpg");
+    	opacity: 1;
+    	background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-position: cover;
+  		background-size: cover;
+	}
+</style>
+
 <body>
-	<center>
-		<h1>Relatório</h1>
-	</center>
+	<style>
+	.outer {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+    }
+	</style>
+	<div align="center" class="outer">
+		<h1 class="title">Relatório</h1>
+	</div>
+	
+	<style>
+	.outer2 {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+       margin-right: 250px;
+       margin-top: 20px;
+       width: 600px;
+    }
+    .button {
+	  background-color: #4CAF50; /* Green */
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 24px;
+	}
+    </style>
+	
+	
+	
+	
     <div align="center">
-        <table border="1" cellpadding="7">
+        <table class = "outer2" border="1" cellpadding="7">
             <tr>
                 <th>ID</th>
                 <th>Preço</th>

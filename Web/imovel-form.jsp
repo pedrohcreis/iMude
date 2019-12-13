@@ -7,15 +7,21 @@
 	<title>Aplicação de Gerenciamento de Imóveis</title>
 </head>
 <body>
-	<center>
-		<h1>Gerenciamento de Imóveis</h1>
-        <h2>
+	<style>
+	.outer {
+       border: 1px solid blue;
+       background-color: #00ACEE;
+    }
+	</style>
+	<div align="center" class="outer">
+		<h1 class="title">Gerenciamento de Imóveis</h1>
+		<h2>
         	<a href="/iMude/imoveis-new-gerente">Adicionar Novo Imóvel</a>
         	&nbsp;&nbsp;&nbsp;
         	<a href="/iMude/imoveis-list-gerente">Listar Todos Imóveis</a>
         	
         </h2>
-	</center>
+	</div>
     <div align="center">
     
 		<c:if test="${imovel != null}">
