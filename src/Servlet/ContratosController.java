@@ -17,7 +17,7 @@ import Model.Contrato;
 /**
  * Servlet implementation class TesteEntidade
  */
-//@WebServlet("/TesteEntidade")
+@WebServlet("/contratos")
 public class ContratosController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ContratoDAO contratoDAO;
@@ -65,7 +65,7 @@ public class ContratosController extends HttpServlet {
 			throws SQLException, IOException, ServletException {
 		List<Contrato> listContrato = contratoDAO.selectAllContratos();
 		request.setAttribute("listContrato", listContrato);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("contrato-list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("meusContratos.jsp");
 		dispatcher.forward(request, response);
 	}
 // Mostrar formulario

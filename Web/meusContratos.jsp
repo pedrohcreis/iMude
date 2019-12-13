@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,17 +48,39 @@
 	  display: inline-block;
 	  font-size: 20px;
 	}
+	.outer3 {
+		border: 1px solid black;
+		background-color: #FFFFFF;
+		margin-right: 400px;
+		margin-left:400px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		width: 300px;
+		height: auto;
+   	    margin: 0 auto;
+    	padding: 20px;
+    	position: relative;
+	}
     </style>
 	<div align="center" class="outer2">
-		<input type="checkbox"><a href="Files/Template Contrato.pdf" style="font-size: 20px;">Contrato 1</a>
 		</br>
-		<input type="checkbox"><a href="Files/Template Contrato.pdf" style="font-size: 20px;">Contrato 2</a>
-		</br>
-		<input type="checkbox"><a href="Files/Template Contrato.pdf" style="font-size: 20px;">Contrato 3</a>
-		</br>
-		<input type="checkbox"><a href="Files/Template Contrato.pdf" style="font-size: 20px;">Contrato 4</a>
-		</br>
-		</br>
+		<c:forEach var="contrato" items="${listContrato}" >
+			<div align="center" class="outer3">
+				<input type="checkbox"><td>Código do Contrato: </td>
+				<td><c:out value="${contrato.id}" /></td>
+				<ul>
+					<li>
+						<td>Data de Expiração: </td>
+						<td><c:out value="${contrato.data}" /></td>
+					</li>
+					<li>
+						<td>Descrição: </td>
+						<td><c:out value="${contrato.descricao}" /></td>
+					</li>
+				</ul>
+			</div>
+			</br>
+		</c:forEach>
 		<a href="index.jsp"><button type="button" class="button">Cancelar Contrato</button></a>
 		</br></br>
 		<a href="index.jsp"><button type="button" class="button">Renovar Contrato</button></a>
