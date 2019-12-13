@@ -91,10 +91,10 @@ public class VisitasController extends HttpServlet {
 // Insercao de Visita
 	private void insertVisita(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException, ServletException {
-		int idImovel = 10;
-		int idCorretor = 2;
-		int idComprador = 5;
-		int idLocatario = 7;
+		int idImovel = 1;
+		int idCorretor = 1;
+		int idComprador = 1;
+		int idLocatario = 1;
 		String data = request.getParameter("data");
 		String horario = request.getParameter("horario");
 		Visita newVisita= new Visita(idImovel, idCorretor, idComprador, idLocatario, data, horario);

@@ -7,8 +7,10 @@
 </head>
 <body>
 	<center>
-		<h1>Você tem uma visita marcada conosco!</h1>
+		<h1>Sua visita for agendada!</h1>
 	</center>
+	
+	<a href="index.jsp"><button type="button" class="button">Voltar</button></a>
     
 </body>
 </html>

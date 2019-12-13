@@ -10,7 +10,7 @@
 </head>
 <style>
 	body {
-    	background-image: url("Files/home.jpg");
+    	background-image: url("Files/area_do_corretor.jpg");
     	opacity: 0.7;
     	background-repeat: no-repeat;
   		background-attachment: fixed;
@@ -18,7 +18,8 @@
   		background-size: cover;
 	}
 </style>
-<body>
+
+<body class="tela">
 	<style>
 	.outer {
        border: 1px solid blue;
@@ -26,14 +27,14 @@
     }
 	</style>
 	<div align="center" class="outer">
-		<h1 class="title">Bem-vindo ao Sistema iMude</h1>
+		<h1 class="title">Área do Corretor</h1>
 	</div>
-	<style>
+	
+    <style>
 	.outer2 {
        border: 1px solid blue;
        background-color: #00ACEE;
        margin-right: 350px;
-       margin-left: 350px;
        margin-top: 20px;
        width: 400px;
     }
@@ -49,31 +50,11 @@
 	}
     </style>
 	<div align="center" class="outer2">
-		<h2>Veja nossos serviços</h2>
-  		<a href="aluguel.jsp"><button type="button" class="button">Imóveis para Aluguel</button></a>
-        </br>
-        </br>
-        <a href="compra.jsp"><button type="button" class="button">Imóveis para Compra</button></a>
+		<h2>Ações disponíveis</h2>
+  		<a href="/iMude/visitas"><button type="button" class="button">Gerenciar Visitas</button></a>
         </br>
         </br>
         </br>
 	</div>
-	<style>
-	.outer3 {
-       border: 1px solid gray;
-       background-color: #C0C0DA;
-       margin-right: 350px;
-       margin-left: 350px;
-       margin-top: 20px;
-       margin-bottom: 20px;
-       width: 400px;
-    }
-    </style>
-    <div align="center" class="outer3">
-	    <h2>Área dos Usuários</h2>
-	    <p style="font-size: 20px;"><a href="login.jsp">Área do Cliente</a></p>
-	    <p style="font-size: 20px;"><a href="area_do_corretor.jsp">Área do Corretor</a></p>
-	    <p style="font-size: 20px;"><a href="area_do_gerente.jsp">Área do Gerente</a></p>
-    </div>
 </body>
 </html>
