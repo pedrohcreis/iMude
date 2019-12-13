@@ -9,16 +9,17 @@
 	<title>Detalhes Imovel</title>
 </head>
 <body class="tela">
+	<c:set var="count" value="${imovel.id}" scope="page" />
 	<div class="imovel-cont" align="center">
 		<form action="new" method="post">
 			<tr>
-				<img src="Files/casa1.jpg" width="600" height="360">
+				<img src="Files/casa${imovel.id}.jpg" width="600" height="360">
 				<br/>
-				<td>descricao <out value="${imovel.descricao}" /></td>
+				<td>descricao <c:out value="${imovel.descricao}" /></td>
 				<br/>		
-				<td>endereco <out value="${imovel.endereco}" /></td>
+				<td>endereco <c:out value="${imovel.endereco}" /></td>
 				<br/>
-				<td>preco <out value="${imovel.endereco}" /></td>
+				<td>preco <c:out value="${imovel.endereco}" /></td>
 				<br/>
 			</tr>
 		</form>

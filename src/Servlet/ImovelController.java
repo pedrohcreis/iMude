@@ -90,7 +90,10 @@ private void showNewForm(HttpServletRequest request, HttpServletResponse respons
 // Mostrar imovel
 	private void mostrarImovel(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		Imovel imovel = imovelDAO.selectImovel(id);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("imovel.jsp");
+		request.setAttribute("imovel", imovel);
 		dispatcher.forward(request, response);
 	}
 // Mostrar imovel para edição

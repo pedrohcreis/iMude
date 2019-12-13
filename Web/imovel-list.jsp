@@ -64,7 +64,7 @@
 	    		<td><c:out value="${imovel.descricao}" /></td>
 	    		</br>	
 	    		</br>
-    			<a href="imovel.jsp"><button type="button" class="button">Mais Detalhes</button></a>
+    			<a href="imoveis-new?id=<c:out value='${imovel.id}' />"><button type="button" class="button">Mais Detalhes</button></a>
 	    		</br>	
 	    		</br>
     		</tr>
