@@ -116,13 +116,13 @@ public class VisitasController extends HttpServlet {
 
 		Visita book = new Visita(id, idImovel, idCorretor, idComprador, idLocatario, data, horario);
 		visitaDAO.updateVisita(book);
-		response.sendRedirect("list");
+		response.sendRedirect("visitas");
 	}
 // Eliminar Visita
 	private void deleteVisita(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		visitaDAO.deleteVisita(id);
-		response.sendRedirect("list");
+		response.sendRedirect("visitas");
 	}
 }
