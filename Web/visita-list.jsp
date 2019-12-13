@@ -8,20 +8,18 @@
 <body>
 	<center>
 		<h1>Gerenciamento de Visitas</h1>
-        <h2>
-        	<a href="visitas-new">Add New Visita</a>
-        	&nbsp;&nbsp;&nbsp;
-        	<a href="list">List All Visitas</a>
-        	
-        </h2>
 	</center>
     <div align="center">
         <table border="1" cellpadding="5">
-            <caption><h2>List of Visitas</h2></caption>
+            <caption><h2>Lista das Visitas</h2></caption>
             <tr>
                 <th>ID</th>
                 <th>Data</th>
                 <th>Horario</th>
+                <th>idImovel</th>
+                <th>idCorretor</th>
+                <th>idComprador</th>
+                <th>idLocatario</th>
                 <th>Actions</th>
             </tr>
             <c:forEach var="visita" items="${listVisita}">
@@ -29,10 +27,14 @@
                     <td><c:out value="${visita.id}" /></td>
                     <td><c:out value="${visita.data}" /></td>
                     <td><c:out value="${visita.horario}" /></td>
+                    <td><c:out value="${visita.idImovel}" /></td>
+                    <td><c:out value="${visita.idCorretor}" /></td>
+                    <td><c:out value="${visita.idComprador}" /></td>
+                    <td><c:out value="${visita.idLocatario}" /></td>
                     <td>
-                    	<a href="visitas-edit?id=<c:out value='${visita.id}' />">Edit</a>
+                    	<a href="/iMude/visitas-edit?id=<c:out value='${visita.id}' />">Edit</a>
                     	&nbsp;&nbsp;&nbsp;&nbsp;
-                    	<a href="visitas-delete?id=<c:out value='${visita.id}' />">Delete</a>                    	
+                    	<a href="/iMude/visitas-delete?id=<c:out value='${visita.id}' />">Delete</a>                    	
                     </td>
                 </tr>
             </c:forEach>
