@@ -90,7 +90,7 @@ public class CompradorController extends HttpServlet {
 		String senha = request.getParameter("senha");
 		Comprador newComprador = new Comprador(nome, email, CPF,senha);
 		compradorDAO.insertComprador(newComprador);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 		dispatcher.forward(request, response);
 	}
 // Atualização de Usuario
