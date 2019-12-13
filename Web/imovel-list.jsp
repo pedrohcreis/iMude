@@ -47,12 +47,11 @@
 	  font-size: 16px;
 	}
 	</style>
-	<c:set var="count" value="1" scope="page" />
 	<c:forEach var="imovel" items="${listImovel}">
 		<div class="outer" align="center">
 			</br>
 			<tr>
-				<img src="Files/casa${count}.jpg" width="400" height="240">
+				<img src="Files/casa${imovel.id}.jpg" width="400" height="240">
 				</br>
 				<td><b>Preço:</b> R$</td>
 	    		<td><c:out value="${imovel.preco}" /></td>
