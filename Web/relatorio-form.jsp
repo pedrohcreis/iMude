@@ -62,5 +62,7 @@
        <p class="outer2">Data Final: <input type="text" name="dataFinal"> </p>
        <p><input class = "button" type="submit" value="Gerar Relatorio"> </p>
     </form>
+    
+    <a href="area_do_gerente.jsp"><button type="button" class="button">Voltar</button></a>
 </body>
 </html>

@@ -55,7 +55,7 @@
                     </td>
                 </tr>
             </c:forEach>
-            
+            <a href="area_do_gerente.jsp"><button type="button" class="button">Voltar</button></a>
         </table>
     </div>	
 </body>

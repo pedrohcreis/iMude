@@ -37,7 +37,7 @@
        width: 600px;
     }
     .button {
-	  background-color: #4CAF50; /* Green */
+	  background-color: rgb(255,0,0); /* Green */
 	  border: none;
 	  color: white;
 	  padding: 15px 32px;
@@ -74,6 +74,8 @@
                 </tr>
             </c:forEach>
         </table>
-    </div>	
+    </div>
+    
+    <a href="relatorio-form.jsp"><button type="button" class="button">Voltar</button></a>
 </body>
 </html>

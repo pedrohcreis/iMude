@@ -59,5 +59,7 @@
         </br>
         </br>
 	</div>
+	
+	<a href="index.jsp"><button type="button" class="button">Voltar</button></a>
 </body>
 </html>
