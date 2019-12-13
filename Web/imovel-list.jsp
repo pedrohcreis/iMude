@@ -24,7 +24,7 @@
 		<div align="center" style="background-color: #00ACEE">
 			<h1>Imóveis disponíveis</h1>
 		</div>
-		<p color="black">Nesta seção estão listados todos os imóveis disponíveis para locação cadastrados em nosso sistema. Caso tenha interesse em algum imóvel, clique no botão <b>mais detalhes</b> para ver maiores detalhes sobre o imóvel e clique em alugar para iniciar sua solicitação.</p>
+		<p color="black">Nesta seção estão listados todos os imóveis disponíveis cadastrados em nosso sistema. Caso tenha interesse em algum imóvel, clique no botão <b>mais detalhes</b> para ver maiores detalhes sobre o imóvel e clique em alugar para iniciar sua solicitação.</p>
 		 </br>
 	</div>
 	<style>

@@ -81,9 +81,9 @@
 			</div>
 			</br>
 		</c:forEach>
-		<a href="index.jsp"><button type="button" class="button">Cancelar Contrato</button></a>
+		<a href="index.jsp"><button type="button" class="button">Inserir Contrato</button></a>
 		</br></br>
-		<a href="index.jsp"><button type="button" class="button">Renovar Contrato</button></a>
+		<a href="index.jsp"><button type="button" class="button">Cancelar Contrato</button></a>
 		</br></br></br>
 	</div>
 </body>

@@ -52,7 +52,7 @@
     	<a href="/iMude/imoveis"><button class="button" type="button">Comprar um Imóvel</button></a>
     	</br>
     	</br>
-    	<a href="meusContratos.jsp"><button class="button" type="button">Meus Contratos</button></a>
+    	<a href="/iMude/contratos"><button class="button" type="button">Meus Contratos</button></a>
     	</br>
     	</br>
     	</br>
