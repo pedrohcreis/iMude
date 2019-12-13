@@ -14,7 +14,7 @@
 	<form name="cadastroForm" method="post" action="/iMude/comprador-insert">
        <div align= "center">
        		<p>Nome: <input type="text" name="nome"> </p>
-       		<p>Senha: <input type="text" name="senha"> </p>
+       		<p>Senha: <input type="password" name="senha"> </p>
        		<p>Email: <input type="text" name="email"> </p>
        		<p>CPF: <input type="text" name="CPF"> </p>
        		<p><input type="submit" value="Finalizar"> </p>

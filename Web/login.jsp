@@ -13,7 +13,7 @@
 	<form name="loginForm" method="get" action="/iMude/comprador-login">
        <div align= "center">
        		<p>Email: <input type="text" name="email"> </p>
-       		<p>Senha: <input type="text" name="senha"> </p>
+       		<p>Senha: <input type="password" name="senha"> </p>
        		<p><input type="submit" value="Entrar"> </p>
        </div>
        <div align= "center">
