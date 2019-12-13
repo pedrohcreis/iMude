@@ -15,8 +15,8 @@
         <form name="cadastroForm" method="post" action="/iMude/gerarRelatorio">
        <p>Tipo de negócio: <input type="text" name="tipo"> </p>
        <p>Status do negócio: <input type="text" name="status"> </p>
-       <p>Data Inicial: <input type="text" name="data_inicial"> </p>
-       <p>Data Final: <input type="text" name="data_final"> </p>
+       <p>Data Inicial: <input type="text" name="dataInicial"> </p>
+       <p>Data Final: <input type="text" name="dataFinal"> </p>
        <p><input type="submit" value="Gerar Relatorio"> </p>
     </form>
     </div>	

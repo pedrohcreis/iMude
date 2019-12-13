@@ -16,13 +16,13 @@ public class ImovelDAO {
 	private String jdbcUsername = "t1g5";
 	private String jdbcPassword = "VnzHBEh";
 	
-	private static final String INSERT_IMOVEL_SQL = "INSERT INTO Imoveis" + "  (preco, endereco, status, descricao, foto, dataInicial, dataFinal) VALUES "
-			+ " (?, ?, ?, ?, ?, ?, ?);";
+	private static final String INSERT_IMOVEL_SQL = "INSERT INTO Imoveis" + "  (preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal) VALUES "
+			+ " (?, ?, ?, ?, ?, ?, ?, ?);";
 
 	private static final String SELECT_IMOVEL_BY_ID = "select id, preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal from Imoveis where id =?";
 	private static final String SELECT_ALL_IMOVEIS = "select * from Imoveis";
 	private static final String DELETE_IMOVEL_SQL = "delete from Imoveis where id = ?;";
-	private static final String UPDATE_IMOVEL_SQL = "update Imoveis set preco = ?, endereco = ?, status = ?, descricao = ?, foto = ?, dataInicial = ?, dataFinal = ? where id = ?;";
+	private static final String UPDATE_IMOVEL_SQL = "update Imoveis set preco = ?, endereco = ?, status = ?, descricao = ?, foto = ?, tipo = ?, dataInicial = ?, dataFinal = ? where id = ?;";
 	private static final String SELECT_COMPRA_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = \"compra\" ;";
 	private static final String SELECT_ALUGUEL_IMOVEL_SQL = "select descricao, foto from Imoveis where tipo = \"aluguel\" ;";
 	
@@ -146,9 +146,10 @@ public class ImovelDAO {
 			statement.setString(3,  imovel.getStatus());
 			statement.setString(4, imovel.getDescricao());
 			statement.setString(5,  imovel.getFoto());
-			statement.setInt(6,  imovel.getDataInicial());
-			statement.setInt(7,  imovel.getDataFinal());
-			statement.setInt(8, imovel.getId());
+			statement.setString(6,  imovel.getTipo());
+			statement.setInt(7,  imovel.getDataInicial());
+			statement.setInt(8,  imovel.getDataFinal());
+			statement.setInt(9, imovel.getId());
 
 			rowUpdated = statement.executeUpdate() > 0;
 		}

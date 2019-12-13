@@ -17,6 +17,8 @@
                 <th>Endereço</th>
                 <th>Status</th>
                 <th>Tipo</th>
+                <th>DataInicial</th>
+                <th>DataFinal</th>
             </tr>
             <c:forEach var="listRelatorio" items="${listRelatorio}">
                 <tr>
@@ -25,6 +27,8 @@
                     <td><c:out value="${listRelatorio.endereco}" /></td>
                     <td><c:out value="${listRelatorio.status}" /></td>
                     <td><c:out value="${listRelatorio.tipo}" /></td>
+                    <td><c:out value="${listRelatorio.dataInicial}" /></td>
+                    <td><c:out value="${listRelatorio.dataFinal}" /></td>
                 </tr>
             </c:forEach>
         </table>

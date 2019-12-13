@@ -106,17 +106,26 @@ private void showNewForm(HttpServletRequest request, HttpServletResponse respons
 // Inserção de imovel
 	private void insertImovel(HttpServletRequest request, HttpServletResponse response) 
 			throws SQLException, IOException {
+		System.out.println("Chegou aqui");
 		Float preco = Float.valueOf(request.getParameter("preco"));
+		System.out.println("Preço: " + preco);
 		String endereco = request.getParameter("endereco");
+		System.out.println("Endereco: " + endereco);
 		String status = request.getParameter("status");
+		System.out.println("Status: " + status);
 		String descricao = request.getParameter("descricao");
+		System.out.println("Descricao: " + descricao);
 		String foto = request.getParameter("foto");
+		System.out.println("Foto: " + foto);
 		String tipo = request.getParameter("tipo");
+		System.out.println("tipo: " + tipo);
 		int dataInicial = Integer.parseInt(request.getParameter("dataInicial"));
+		System.out.println("Data Inicial: " + dataInicial);
 		int dataFinal = Integer.parseInt(request.getParameter("dataFinal"));
+		System.out.println("Data Final: " + dataFinal);
 		Imovel newImovel = new Imovel(preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal);
 		imovelDAO.insertImovel(newImovel);
-		response.sendRedirect("list");
+		response.sendRedirect("/iMude/imoveis-list-gerente");
 	}
 // Atualização de imovel
 	private void updateImovel(HttpServletRequest request, HttpServletResponse response) 
@@ -133,7 +142,7 @@ private void showNewForm(HttpServletRequest request, HttpServletResponse respons
 		int dataFinal = Integer.parseInt(request.getParameter("dataFinal"));
 		Imovel imovel = new Imovel(id, preco, endereco, status, descricao, foto, tipo, dataInicial, dataFinal);
 		imovelDAO.updateImovel(imovel);
-		response.sendRedirect("list");
+		response.sendRedirect("/iMude/imoveis-list-gerente");
 	}
 // Eliminar imovel
 	private void deleteImovel(HttpServletRequest request, HttpServletResponse response) 

@@ -91,7 +91,7 @@
             <tr>
                 <th>Data Inicial: </th>
                 <td>
-                	<input type="text" name="data_inicial" size="15"
+                	<input type="text" name="dataInicial" size="15"
                 			value="<c:out value='${imovel.dataInicial}' />"
                 	/>
                 </td>
@@ -99,7 +99,7 @@
             <tr>
                 <th>Data Final: </th>
                 <td>
-                	<input type="text" name="data_final" size="15"
+                	<input type="text" name="dataFinal" size="15"
                 			value="<c:out value='${imovel.dataFinal}' />"
                 	/>
                 </td>
